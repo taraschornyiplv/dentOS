@@ -30,8 +30,9 @@ build: deps
 	echo "configure options: $(CONFIGURE_OPTIONS)"
 	echo "toolchain dir: $(TOOLCHAIN_DIR)"
 	echo "GCC: $(GCC)"
-	cd iproute2 && export PKG_CONFIG_PATH=$(PKG_CONFIG_DIRS) && ./configure --host $(TOOLCHAIN)
-	$(MAKE) V=1 PREFIX=/usr/local CC=$(GCC) -C iproute2
+#       cd iproute2 && PKG_CONFIG_PATH=$(PKG_CONFIG_DIRS) CC=$(GCC) LD=$(TOOLCHAIN)-ld ./configure
+	cd iproute2 && CC=$(GCC) LD=$(TOOLCHAIN)-ld ./configure
+	$(MAKE) V=1 PREFIX=/usr/local  HOSTCC=gcc -C iproute2
 
 SERIES		:= \
   0100-tc-flower-icmp-vlan.patch \
