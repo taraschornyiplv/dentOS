@@ -3,7 +3,6 @@
 - frr
 - mrvl-fw-image
 - bridge-utils
-- mstpd
 - bash-completion
 - man-db
 - dnsmasq
