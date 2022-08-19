@@ -58,7 +58,7 @@ get_sfp_module_status(int port, plat_sfp_status_t sfp_status)
      */
     int rv = ONLP_STATUS_OK;
     int module_status;
-    char mlx_cmd[PATH_MAX] = {0};
+    char mlx_cmd[PATH_MAX+100] = {0};
     char reg[PATH_MAX] = {0};
     plat_info_t *plat_info = &gPlat_info[gPlat_id];
     FILE *pFd = NULL;
@@ -195,9 +195,9 @@ onlp_sfpi_eeprom_read(int port, uint8_t data[256])
 {
     int rv = ONLP_STATUS_OK;
     int idx = 0;
-    char mlx_cmd[PATH_MAX] = {0};
+    char mlx_cmd[PATH_MAX+100] = {0};
     char eeprom_dev_name[PATH_MAX] = {0};
-    char eeprom_dev_path[PATH_MAX] = {0};
+    char eeprom_dev_path[PATH_MAX+100] = {0};
     char eeprom_data[PATH_MAX] = {0};
     plat_info_t *plat_info = &gPlat_info[gPlat_id];
     FILE *pFd = NULL;
