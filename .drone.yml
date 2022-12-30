@@ -1,0 +1,10 @@
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: chornyitaras/builder10:1.4
+  commands:
+  - chornyitaras/builder10:1.4
+  - source setup.env
+  - make arm64
