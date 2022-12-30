@@ -8,6 +8,5 @@ steps:
   - sudo apt-cacher-ng
   - pwd
   - ls -la
-  - bash setup.env
-  - source setup.env
+  - . ./setup.env
   - make arm64
