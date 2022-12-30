@@ -6,5 +6,5 @@ steps:
   image: chornyitaras/builder10:1.4
   commands:
   - sudo apt-cacher-ng
-  - source setup.env
+  - . setup.env
   - make arm64
