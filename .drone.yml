@@ -3,10 +3,14 @@ name: default
 
 steps:
 - name: test
-  image: chornyitaras/builder10:1.4
+  image: docker:dind
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
   commands:
-  - sudo apt-cacher-ng
-  - pwd
-  - ls -la
-  - . ./setup.env
-  - make arm64
+  - make docker
+  
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
