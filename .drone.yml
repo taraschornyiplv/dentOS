@@ -9,5 +9,5 @@ steps:
   - pwd
   - ls -la
   - bash setup.env
-  - . setup.env
+  - source setup.env
   - make arm64
