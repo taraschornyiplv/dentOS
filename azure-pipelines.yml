@@ -13,3 +13,5 @@ steps:
 - script: |
     make docker
   displayName: 'make'
+  workingDirectory: dentOS
+
