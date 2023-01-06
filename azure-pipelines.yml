@@ -30,4 +30,4 @@ steps:
     script: |
       # Write your commands here
       
-      make docker
+      docker/tools/onlbuilder -9
