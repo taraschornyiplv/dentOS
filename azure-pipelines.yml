@@ -6,39 +6,31 @@
 trigger:
 - buster
 
-pool:
-  vmImage: ubuntu-latest
 
-steps:
-- script: |
-    ls -la
-  displayName: 'make'
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      ls -la
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: '17.09.0-ce'
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.10'
-    addToPath: true
-    architecture: 'x64'
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      ls -la /usr/bin
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      make docker
+jobs: 
+- job:
+  pool:
+    vmImage: ubuntu-latest
+    displayName: "build"
+    timeoutInMinutes: 600
+    steps:
+    - script: |
+        echo "test"
+      displayName: "Echo"
+
+    - task: DockerInstaller@0
+    inputs:
+        dockerVersion: '17.09.0-ce'
+
+   - task: UsePythonVersion@0
+     inputs:
+       versionSpec: '3.10'
+       addToPath: true
+       architecture: 'x64'
+    - task: Bash@3
+    inputs:
+        targetType: 'inline'
+        script: |
+        # Write your commands here
+        
+        make docker
