@@ -25,7 +25,7 @@ steps:
     dockerVersion: '17.09.0-ce'
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '2.7'
+    versionSpec: '3.10'
     addToPath: true
     architecture: 'x64'
 - task: Bash@3
