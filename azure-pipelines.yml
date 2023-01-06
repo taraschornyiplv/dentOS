@@ -11,26 +11,21 @@ jobs:
 - job:
   pool:
     vmImage: ubuntu-latest
-    displayName: "build"
-    timeoutInMinutes: 600
-    steps:
-    - script: |
-        echo "test"
-      displayName: "Echo"
-
-    - task: DockerInstaller@0
+  displayName: "build"
+  timeoutInMinutes: 600
+  steps:
+  - task: DockerInstaller@0
     inputs:
-        dockerVersion: '17.09.0-ce'
-
-   - task: UsePythonVersion@0
-     inputs:
-       versionSpec: '3.10'
-       addToPath: true
-       architecture: 'x64'
-    - task: Bash@3
+      dockerVersion: '17.09.0-ce'
+  - task: UsePythonVersion@0
     inputs:
-        targetType: 'inline'
-        script: |
+      versionSpec: '3.10'
+      addToPath: true
+      architecture: 'x64'
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
         # Write your commands here
         
         make docker
