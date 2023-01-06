@@ -11,7 +11,12 @@ pool:
 
 steps:
 - script: |
-    make docker
+    ls -la
   displayName: 'make'
-  workingDirectory: dentOS
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      ls -la
