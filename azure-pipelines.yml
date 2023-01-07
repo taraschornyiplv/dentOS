@@ -32,6 +32,6 @@ jobs:
         make docker
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: '/RELEASE/buster/arm64/'
+      PathtoPublish: '$(System.DefaultWorkingDirectory)/RELEASE/buster/arm64/'
       ArtifactName: 'dent'
       publishLocation: 'Container'
