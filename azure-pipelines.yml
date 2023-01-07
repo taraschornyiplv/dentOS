@@ -12,7 +12,7 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   displayName: "build"
-  timeoutInMinutes: 600
+  timeoutInMinutes: 360
   steps:
   - task: DockerInstaller@0
     inputs:
@@ -23,6 +23,7 @@ jobs:
       addToPath: true
       architecture: 'x64'
   - task: Bash@3
+    timeoutInMinutes: 360
     inputs:
       targetType: 'inline'
       script: |
