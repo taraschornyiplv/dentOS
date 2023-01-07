@@ -30,3 +30,8 @@ jobs:
         # Write your commands here
         
         make docker
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '/RELEASE/buster/arm64/'
+      ArtifactName: 'dent'
+      publishLocation: 'Container'
