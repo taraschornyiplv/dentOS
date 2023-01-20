@@ -13,6 +13,7 @@ jobs:
 
     steps:
     - uses: docker-practice/actions-setup-docker@master
+    - uses: actions/checkout@v3
 
     - name: build
       run: make docker
