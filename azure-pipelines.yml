@@ -4,8 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
 
 trigger:
-- buster
-
+  - '*'
 
 jobs: 
 - job:
