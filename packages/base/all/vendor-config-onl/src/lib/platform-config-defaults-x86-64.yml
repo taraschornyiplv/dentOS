@@ -46,7 +46,7 @@ default:
 
     # pick one of the above kernels
     kernel:
-      <<: *kernel-3-16
+      <<: *kernel-5-6
 
     # GRUB command line arguments for 'serial' declaration
     # this is equivalent to, but not in the same format as,
